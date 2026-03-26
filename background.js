@@ -28,7 +28,7 @@ function filterMessages() {
       let el = main.querySelector("span[email]");
       if (el) {
         let senderEmail = el.getAttribute("email");
-        let querySearch = "from:(" + senderEmail + ")";
+        let querySearch = "from:(" + encodeURIComponent(senderEmail) + ")";
         let queryUrl = baseUrl + "#search/" + querySearch;
 
         console.log("Redirecting to: " + queryUrl);
