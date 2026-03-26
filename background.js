@@ -29,7 +29,7 @@ function filterMessages() {
       if (el) {
         let senderEmail = el.getAttribute("email");
         let querySearch = "from:(" + senderEmail + ")";
-        let queryUrl = baseUrl + "#search/" + querySearch;
+        let queryUrl = baseUrl + "#search/" + encodeURIComponent(querySearch);
 
         console.log("Redirecting to: " + queryUrl);
         window.location.href = queryUrl;
